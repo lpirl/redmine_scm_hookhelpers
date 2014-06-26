@@ -1,7 +1,7 @@
 redmine_scm_hookhelpers
 =======================
 
-Helpers for commit hooks when using the [Redmine SCM plugin](http://www.redmine.org/plugins/redmine_scm).
+Helpers for commit hook scripts.
 
 This plugin is tested and developed with the current Redmine version (2.5).
 Please drop me a note if you find [in]compatibilities with other versions.
@@ -10,8 +10,8 @@ description
 -----------
 
 Redmine offers a web service for repositories.
-This can be used - for exmaple - to fetch all commits for all repositories.
-Once your installation grows, this will get horrobly inefficient.
+This can be used - for example - to fetch all commits for all repositories.
+Once your installation grows, this will get horribly inefficient.
 This plugin provides an extensions to the native web services API to fetch commits for specific repositories only.
 
 Additionally to the parameters mentioned
