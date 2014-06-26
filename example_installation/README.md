@@ -2,7 +2,32 @@ Let's assume you have read [the main readme](../../..).
 
 ## How get the hooks installed?
 
-For this purpose, there is [redmine_scm_symlink_post_commit_hook.py](redmine_scm_symlink_post_commit_hook.py).
+Of curse, you can just copy your hook handlers to the corresponding directory of your repository.
+
+But there is [redmine_scm_symlink_post_commit_hook.py](redmine_scm_symlink_post_commit_hook.py) to take away the burden of doing manual symlinking.
+
+#### existing repositories
+
+Nevermind, it'll be easy to set up the hooks for all your repositories:
+
+    find /var/repositories/svn -maxdepth 1 -mindepth 1 | \
+      xargs -L 1 -I{} \
+        /path/to/redmine_scm_symlink_post_commit_hook.py {} svn
+
+or
+
+    find /var/repositories/git -maxdepth 1 -mindepth 1 | \
+      xargs -L 1 -I{} \
+        /path/to/redmine_scm_symlink_post_commit_hook.py {} git
+
+        
+respectively.
+
+(Of curse, adapt the commands according to your setup)
+
+#### automated installtion for new repositories
+
+Nevertheless, the installation can be easily automated using the [Redmine SCM plugin](http://www.redmine.org/plugins/redmine_scm).
 
 This gets called upon repository creation and will symlink the corresponding hook into the newly created repository.
 
@@ -15,22 +40,6 @@ To call this upon repository creation, edit Redmine's `config/scm.yml` according
       ...
 
 Like documented [here](http://projects.andriylesyuk.com/projects/scm-creator/wiki/Scripts#Arguments), the script will receive the repository root path and the repository type as command line arguments.
-
-#### Good. But what about existing repositories?
-
-Nevermind, it'll be easy to catch up:
-
-    find /var/repositories/svn -maxdepth 1 -mindepth 1 | \
-      xargs -L 1 -I{} \
-        /path/to/redmine_scm_symlink_post_commit_hook.py {} svn
-
-or
-
-    find /var/repositories/git -maxdepth 1 -mindepth 1 | \
-      xargs -L 1 -I{} \
-        /path/to/redmine_scm_symlink_post_commit_hook.py {} git
-        
-respectively.
 
 ## What do the hooks do?
 
