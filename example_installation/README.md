@@ -2,7 +2,7 @@ Let's assume you have read [the main readme](../../..).
 
 ## How get the hooks installed?
 
-Of curse, you can just copy your hook handlers to the corresponding directory of your repository.
+Of curse, you can just copy/symlink your hook handlers to the corresponding directory of your repository.
 
 But there is [redmine_scm_symlink_post_commit_hook.py](redmine_scm_symlink_post_commit_hook.py) to take away the burden of doing manual symlinking.
 
