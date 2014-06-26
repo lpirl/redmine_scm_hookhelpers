@@ -52,8 +52,8 @@ parser.add_argument('repository_path', type=str,
                     help='path to the repository root')
 parser.add_argument('repository_type', type=str,
                     help='type of the repository (svn, git, …)')
-parser.add_argument('project_id', type=str,
-                    help='identifier of the Redmine project')
+parser.add_argument('project_id', type=str, default="none", nargs='?',
+                    help='unused (but specified by Redmine SCM plugin)')
 args = parser.parse_args()
 
 # sanitize, verify, go #################################################
