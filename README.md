@@ -3,7 +3,7 @@ redmine_scm_hookhelpers
 
 Helpers for commit hook scripts.
 
-This plugin is tested and developed with the current Redmine version (2.5).
+This plugin is tested and developed with the current Redmine version (2.6).
 Please drop me a note if you find [in]compatibilities with other versions.
 
 description
