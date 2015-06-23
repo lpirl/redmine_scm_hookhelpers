@@ -20,7 +20,7 @@ module SysControllerPatch
                 return fetch_changesets_without_by_root_url
             end
 
-            repositories = Repository.find_all_by_root_url params[:root_url].to_s
+            repositories = Repository.where(root_url: params[:root_url].to_s)
 
             unless repositories
                 render :nothing => true, :status => 404
