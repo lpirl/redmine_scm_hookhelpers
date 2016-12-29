@@ -1,10 +1,17 @@
+**this is the branch for Redmine version 2**
+
+------------------------------------------------------------------------
+
 redmine_scm_hookhelpers
 =======================
 
 Helpers for commit hook scripts.
 
-This plugin is tested with Redmine version up to 3.3.0.
-Please drop me a note if you find [in]compatibilities with other versions.
+This branch of the plugin is intended for Redmine 2.
+However, I do not use this plugin with Redmine 2, so users are somewhat
+on their own.
+If you find [in]compatibilities, please consider contributing a pull
+request so we can maintain this branch.
 
 description
 -----------
