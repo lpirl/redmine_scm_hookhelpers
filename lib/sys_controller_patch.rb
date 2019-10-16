@@ -6,7 +6,8 @@ module SysControllerPatch
         base.extend(ClassMethods)
         base.send(:include, InstanceMethods)
         base.class_eval do
-            alias_method_chain :fetch_changesets, :by_root_url
+            alias_method :fetch_changesets_without_by_root_url, :fetch_changesets
+            alias_method :fetch_changesets, :fetch_changesets_with_by_root_url
         end
     end
 
