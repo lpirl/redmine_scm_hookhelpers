@@ -24,7 +24,7 @@ module SysControllerPatch
             repositories = Repository.where(root_url: params[:root_url].to_s)
 
             unless repositories
-                render :nothing => true, :status => 404
+                head :not_found
             end
 
             for repository in repositories
@@ -32,7 +32,7 @@ module SysControllerPatch
                 Rails.logger.info "fetched changesets for " + repository.root_url
             end
 
-            render :nothing => true, :status => 200
+            head :ok
         end
 
     end
